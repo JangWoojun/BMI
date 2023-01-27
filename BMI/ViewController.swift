@@ -1,7 +1,7 @@
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
-
+class ViewController: UIViewController {
+    
     @IBOutlet weak var mainButton: UIButton!
     
     @IBOutlet weak var heightTextField: UITextField!
@@ -23,14 +23,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         heightTextField.keyboardType = .numberPad
         weightTextField.keyboardType = .numberPad
     }
-
+    
     @IBAction func mainButtonTapped(_ sender: UIButton) {
         guard let resultVC = storyboard?.instantiateViewController(withIdentifier: "ResultVC") as? ResultViewController else {
             return
         }
         
         if let height = Double(heightTextField.text!), let weight = Double(weightTextField.text!) {
-                
+            
             let bmi = weight / ((height * 0.01) * (height * 0.01))
             
             resultVC.bmi = bmi
@@ -46,11 +46,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
             }
             
             present(resultVC, animated: true)
-        
+            
         }
-                
+        
     }
     
+    
+    
+}
+
+extension ViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         view.backgroundColor = .systemGray4
         heightTextField.backgroundColor = .systemGray4
@@ -66,8 +71,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
-         self.view.endEditing(true)
-   }
-    
+        self.view.endEditing(true)
+    }
 }
-
