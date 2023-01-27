@@ -19,6 +19,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         heightTextField.borderStyle = .roundedRect
         weightTextField.borderStyle = .roundedRect
+        
+        heightTextField.keyboardType = .numberPad
+        weightTextField.keyboardType = .numberPad
     }
 
     @IBAction func mainButtonTapped(_ sender: UIButton) {
