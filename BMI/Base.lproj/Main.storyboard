@@ -125,6 +125,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="backButton:" destination="iEw-Yc-wVz" eventType="touchUpInside" id="bER-f0-J3b"/>
                                     <action selector="mainButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5BY-HM-e1x"/>
                                 </connections>
                             </button>
@@ -146,7 +147,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="체중 감량이 필요합니다" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EfO-jM-adG">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="체중 감량이 필요합니다" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EfO-jM-adG">
                                         <rect key="frame" x="0.0" y="104" width="200" height="24"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
                                         <nil key="textColor"/>
@@ -168,6 +169,10 @@
                             <constraint firstItem="ReC-Gz-6VF" firstAttribute="leading" secondItem="uGd-ag-h3P" secondAttribute="leading" constant="20" id="vkf-9E-RmQ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bmiLabel" destination="epf-aC-tPo" id="JiB-mt-Z1n"/>
+                        <outlet property="bmiTextLabel" destination="EfO-jM-adG" id="88R-Zk-6MA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kng-Oy-khq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
