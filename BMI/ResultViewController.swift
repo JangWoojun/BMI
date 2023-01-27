@@ -4,6 +4,7 @@ class ResultViewController: UIViewController {
 
     @IBOutlet weak var bmiTextLabel: UILabel!
     @IBOutlet weak var bmiLabel: UILabel!
+    @IBOutlet weak var backButton: UIButton!
     
     var bmi: Double?
     var bmiText: String?
@@ -30,6 +31,9 @@ class ResultViewController: UIViewController {
         } else {
             bmiLabel.backgroundColor = .systemRed
         }
+        
+        backButton.clipsToBounds = true
+        backButton.layer.cornerRadius = 10
         
     }
 

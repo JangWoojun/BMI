@@ -22,6 +22,9 @@ class ViewController: UIViewController {
         
         heightTextField.keyboardType = .numberPad
         weightTextField.keyboardType = .numberPad
+        
+        mainButton.clipsToBounds = true
+        mainButton.layer.cornerRadius = 10
     }
     
     @IBAction func mainButtonTapped(_ sender: UIButton) {
