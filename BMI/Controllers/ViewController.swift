@@ -44,6 +44,9 @@ class ViewController: UIViewController {
             
             present(resultVC, animated: true)
             
+            weightTextField.text = ""
+            heightTextField.text = ""
+            
         }
         
     }
