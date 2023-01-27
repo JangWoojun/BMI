@@ -33,7 +33,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 
             let bmi = weight / ((height * 0.01) * (height * 0.01))
             
-            resultVC.bmi = String(format: "%.1f", bmi)
+            resultVC.bmi = bmi
             
             if bmi < 18.5 {
                 resultVC.bmiText = "저체중으로 체중 증량이 필요합니다"

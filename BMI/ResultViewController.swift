@@ -5,7 +5,7 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var bmiTextLabel: UILabel!
     @IBOutlet weak var bmiLabel: UILabel!
     
-    var bmi: String?
+    var bmi: Double?
     var bmiText: String?
     
     override func viewDidLoad() {
@@ -15,8 +15,22 @@ class ResultViewController: UIViewController {
     }
     
     func UISetUp() {
-        bmiLabel.text = bmi
+        bmiLabel.text = String(format: "%.1f", bmi!)
         bmiTextLabel.text = bmiText
+        
+        bmiLabel.layer.cornerRadius = 8
+        bmiLabel.clipsToBounds = true
+        
+        if bmi! < 18.5 {
+            bmiLabel.backgroundColor = .cyan
+        } else if bmi! < 23 {
+            bmiLabel.backgroundColor = .systemGreen
+        } else if bmi! < 25 {
+            bmiLabel.backgroundColor = .systemOrange
+        } else {
+            bmiLabel.backgroundColor = .systemRed
+        }
+        
     }
 
     @IBAction func backButton(_ sender: UIButton) {
