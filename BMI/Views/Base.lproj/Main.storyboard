@@ -171,6 +171,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="ReC-Gz-6VF" id="mN7-OI-MBj"/>
                         <outlet property="bmiLabel" destination="epf-aC-tPo" id="JiB-mt-Z1n"/>
                         <outlet property="bmiTextLabel" destination="EfO-jM-adG" id="88R-Zk-6MA"/>
                     </connections>

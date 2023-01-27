@@ -7,6 +7,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var heightTextField: UITextField!
     @IBOutlet weak var weightTextField: UITextField!
     
+    var bmiManager = BMICalculatorManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,27 +36,17 @@ class ViewController: UIViewController {
         
         if let height = Double(heightTextField.text!), let weight = Double(weightTextField.text!) {
             
-            let bmi = weight / ((height * 0.01) * (height * 0.01))
+            bmiManager.calculateBMI(weight: weight, height: height)
             
-            resultVC.bmi = bmi
-            
-            if bmi < 18.5 {
-                resultVC.bmiText = "저체중으로 체중 증량이 필요합니다"
-            } else if bmi < 23 {
-                resultVC.bmiText = "정상 체중입니다"
-            } else if bmi < 25 {
-                resultVC.bmiText = "과체중으로 약간에 체중 감량이 필요합니다"
-            } else {
-                resultVC.bmiText = "비만으로 체중 감량이 필요합니다"
-            }
+            resultVC.bmi = bmiManager.returnBMI()
+            resultVC.bmiText = bmiManager.calculateBMIText()
+            resultVC.bmiColor = bmiManager.calculateBMIColor()
             
             present(resultVC, animated: true)
             
         }
         
     }
-    
-    
     
 }
 

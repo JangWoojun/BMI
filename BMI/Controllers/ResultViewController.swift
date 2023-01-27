@@ -8,6 +8,7 @@ class ResultViewController: UIViewController {
     
     var bmi: Double?
     var bmiText: String?
+    var bmiColor: UIColor?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,18 +23,11 @@ class ResultViewController: UIViewController {
         bmiLabel.layer.cornerRadius = 8
         bmiLabel.clipsToBounds = true
         
-        if bmi! < 18.5 {
-            bmiLabel.backgroundColor = .cyan
-        } else if bmi! < 23 {
-            bmiLabel.backgroundColor = .systemGreen
-        } else if bmi! < 25 {
-            bmiLabel.backgroundColor = .systemOrange
-        } else {
-            bmiLabel.backgroundColor = .systemRed
-        }
-        
         backButton.clipsToBounds = true
         backButton.layer.cornerRadius = 10
+        
+        bmiLabel.backgroundColor = bmiColor
+        
         
     }
 
