@@ -61,11 +61,11 @@
 				30524F3829839E2B00977FC4 /* AppDelegate.swift */,
 				30524F3A29839E2B00977FC4 /* SceneDelegate.swift */,
 				30524F3C29839E2B00977FC4 /* ViewController.swift */,
+				30524F4C2983A8AB00977FC4 /* ResultViewController.swift */,
 				30524F3E29839E2B00977FC4 /* Main.storyboard */,
 				30524F4129839E2C00977FC4 /* Assets.xcassets */,
 				30524F4329839E2C00977FC4 /* LaunchScreen.storyboard */,
 				30524F4629839E2C00977FC4 /* Info.plist */,
-				30524F4C2983A8AB00977FC4 /* ResultViewController.swift */,
 			);
 			path = BMI;
 			sourceTree = "<group>";
