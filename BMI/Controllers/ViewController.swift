@@ -1,13 +1,13 @@
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     
     @IBOutlet weak var mainButton: UIButton!
     
     @IBOutlet weak var heightTextField: UITextField!
     @IBOutlet weak var weightTextField: UITextField!
     
-    var bmiManager = BMICalculatorManager()
+    private var bmiManager = BMICalculatorManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,11 +36,7 @@ class ViewController: UIViewController {
         
         if let height = Double(heightTextField.text!), let weight = Double(weightTextField.text!) {
             
-            bmiManager.calculateBMI(weight: weight, height: height)
-            
-            resultVC.bmi = bmiManager.returnBMI()
-            resultVC.bmiText = bmiManager.calculateBMIText()
-            resultVC.bmiColor = bmiManager.calculateBMIColor()
+            resultVC.bmi = bmiManager.returnBMI(weight: weight, height: height)
             
             present(resultVC, animated: true)
             

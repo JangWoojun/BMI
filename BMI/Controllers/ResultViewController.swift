@@ -6,9 +6,7 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var bmiLabel: UILabel!
     @IBOutlet weak var backButton: UIButton!
     
-    var bmi: Double?
-    var bmiText: String?
-    var bmiColor: UIColor?
+    var bmi: BMI?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,8 +15,8 @@ class ResultViewController: UIViewController {
     }
     
     func UISetUp() {
-        bmiLabel.text = String(format: "%.1f", bmi!)
-        bmiTextLabel.text = bmiText
+        bmiLabel.text = String(format: "%.1f", bmi!.bmi)
+        bmiTextLabel.text = bmi?.bmiText
         
         bmiLabel.layer.cornerRadius = 8
         bmiLabel.clipsToBounds = true
@@ -26,7 +24,7 @@ class ResultViewController: UIViewController {
         backButton.clipsToBounds = true
         backButton.layer.cornerRadius = 10
         
-        bmiLabel.backgroundColor = bmiColor
+        bmiLabel.backgroundColor = bmi?.color
         
         
     }
